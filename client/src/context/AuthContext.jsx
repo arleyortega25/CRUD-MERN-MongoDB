@@ -6,10 +6,8 @@ export const UseAuth = () => {
   return useContext(ContextoAutenticacion);
 };
 
-
 export function AuthContext(props) {
   const [cargando, setCargando] = useState(true);
-  
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, SetUser] = useState(null);
@@ -20,7 +18,6 @@ export function AuthContext(props) {
 
       SetUser(res.data);
       setIsAuthenticated(true);
-      
     } catch (error) {
       console.error(error);
 
@@ -32,7 +29,6 @@ export function AuthContext(props) {
       const res = await ApiLogin(valor);
 
       setIsAuthenticated(true);
-      
     } catch (error) {
       console.error(error);
       SetErrores(error.response?.data || { message: "error desconocido" });

@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+import { MONGODB_PASSWORD } from './config.js'
 const ConectMDB = async () => {
   try {
-   await  mongoose.connect("mongodb+srv://oarleyfernando21:q7DODLXaajggoaQf@cluster0.xxvqnua.mongodb.net/");
+   await  mongoose.connect(MONGODB_PASSWORD);
    console.log('base de datos conectada')
   } catch (error) {
     console.error(error)

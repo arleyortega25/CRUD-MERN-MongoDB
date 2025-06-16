@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { SECRET_TOKEN } from '../config.js'
 
 export const CrearToken =  (payload) => {
   return new Promise((resolve,reject) => {
@@ -6,7 +7,7 @@ export const CrearToken =  (payload) => {
     {
       id: payload,
     },
-    "secret",
+    SECRET_TOKEN,
     {
       expiresIn: "1d",
     },
